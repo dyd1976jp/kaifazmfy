@@ -4,7 +4,7 @@ status: backlog
 created: 2025-09-05T06:30:32Z
 progress: 0%
 prd: .claude/prds/video-subtitle-translate.md
-github: https://github.com/dyd1976jp/kaifazmfy/issues/1
+github: [Will be updated when synced to GitHub]
 ---
 
 # Epic: video-subtitle-translate
@@ -117,18 +117,18 @@ MP4输入 → AudioExtractor → WhisperSTT → LocalLLMTranslator → SRTFormat
 
 ## Tasks Created
 
-- [ ] [#7](https://github.com/dyd1976jp/kaifazmfy/issues/7) - 项目搭建和配置 (parallel: false)
-- [ ] [#8](https://github.com/dyd1976jp/kaifazmfy/issues/8) - 音频处理模块 (parallel: true)
-- [ ] [#9](https://github.com/dyd1976jp/kaifazmfy/issues/9) - Whisper语音识别 (parallel: true)
-- [ ] [#4](https://github.com/dyd1976jp/kaifazmfy/issues/4) - 本地LLM翻译 (parallel: true)
-- [ ] [#5](https://github.com/dyd1976jp/kaifazmfy/issues/5) - 双语字幕生成 (parallel: false)
-- [ ] [#6](https://github.com/dyd1976jp/kaifazmfy/issues/6) - 交互式校对界面 (parallel: true)
-- [ ] [#2](https://github.com/dyd1976jp/kaifazmfy/issues/2) - 命令行界面 (parallel: false)
-- [ ] [#3](https://github.com/dyd1976jp/kaifazmfy/issues/3) - 测试和文档 (parallel: false)
+- [ ] 001.md - 项目搭建和配置 (parallel: false, depends_on: [])
+- [ ] 002.md - 音频处理模块 (parallel: true, depends_on: [001])
+- [ ] 003.md - Whisper语音识别 (parallel: true, depends_on: [001])
+- [ ] 004.md - 本地LLM翻译 (parallel: true, depends_on: [001])
+- [ ] 005.md - 双语字幕生成 (parallel: false, depends_on: [003, 004])
+- [ ] 006.md - 交互式校对界面 (parallel: true, depends_on: [005])
+- [ ] 007.md - 命令行界面 (parallel: false, depends_on: [002, 003, 004, 005])
+- [ ] 008.md - 测试和文档 (parallel: false, depends_on: [001-007])
 
 **总计任务**: 8
-**并行任务**: 4 (#8, #9, #4, #6)
-**串行任务**: 4 (#7, #5, #2, #3)
+**并行任务**: 4 (002, 003, 004, 006)
+**串行任务**: 4 (001, 005, 007, 008)
 **预估总工作量**: 18-22天
 
 ### 任务依赖关系
